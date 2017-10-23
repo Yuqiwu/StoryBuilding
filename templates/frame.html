@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Change the title of the page depending on what's being displayed -->
-        <title>
-            {% block title %} {% endblock %}
-        </title>
+        <!-- These must come FIRST in the head. Everything else after-->
+
         <!-- Required Meta Tags -->
         <meta charset="utf-8"/>
         <!-- Ensures proper rendering and touch-zooming for all devices -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+
+        <!-- End prioritization -->
+        
+        <!-- Change the title of the page depending on what's being displayed -->
+        <title>
+            {% block title %} {% endblock %}
+        </title>
     </head>
     <body>
+        <!-- Navbar - Consistent across all pages -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">MMSC</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Stories</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Search Stories" type="text">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         {% block content %}
         {% endblock %}
-        <!-- Footer -->
-        <h6>--Team Mighty Morphin Story Changers--</h6>
+        <!-- Footer - Consistent across all pages-->
+        <footer class="footer">
+            <div class="container text-center">
+                <p>
+                    --Team Mighty Morphin Story Changers 
+                    <!-- Current Year -->
+                    <script language="JavaScript" type="text/javascript">
+                        now = new Date
+                        theYear = now.getYear()
+                        if (theYear < 1900)
+                            theYear = theYear + 1900
+                        document.write(theYear)
+                    </script>
+                    --
+                </p>
+            </div>
+        </footer>
         <!-- Javascript -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>

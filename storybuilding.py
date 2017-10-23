@@ -8,6 +8,10 @@ storybuilding.secret_key = os.urandom(32)
 def homepage():
     return render_template('frame.html')
 
+@storybuilding.route('/stories')
+def stories():
+    return redirect(url_for('homepage'))
+
 if __name__ == '__main__':
     storybuilding.debug = True
     storybuilding.run()
