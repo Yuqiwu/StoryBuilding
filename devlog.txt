@@ -53,3 +53,8 @@ Yu Qi :: Initialized devlog & Edited design document
 Edmond :: Edited design document
 Kyle :: Edited design document
 ==============================================================
+
+2017-10-23
+--------------------------------------------------------------
+Kyle :: Initial adding of bootstrap components.
+==============================================================
