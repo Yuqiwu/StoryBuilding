@@ -5,8 +5,9 @@ storybuilding = Flask(__name__)
 storybuilding.secret_key = os.urandom(32)
 
 @storybuilding.route('/')
+@storybuilding.route('/home')
 def homepage():
-    return render_template('frame.html')
+    return render_template('home.html')
 
 @storybuilding.route('/login')
 def login():
@@ -14,7 +15,7 @@ def login():
 
 @storybuilding.route('/stories')
 def stories():
-    return redirect(url_for('homepage'))
+    return render_template('stories.html')
 
 if __name__ == '__main__':
     storybuilding.debug = True

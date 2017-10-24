@@ -12,10 +12,13 @@
 
         <!-- End prioritization -->
         
+        <!-- JavaScript document-ready function -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/myjs.js') }}"></script>
+
         <!-- Change the title of the page depending on what's being displayed -->
-        <title>
-            {% block title %} {% endblock %}
-        </title>
+        {% block title %}
+        <title>Placeholder title</title>
+        {% endblock %}
     </head>
     <body>
         <!-- Navbar - Consistent across all pages -->
@@ -32,8 +35,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Stories</a></li>
+                        {% block navlinks %}
+                        <li class="active"><a href="./home">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="./stories">Stories</a></li>
+                        {% endblock %}
                     </ul>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
@@ -43,12 +48,13 @@
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         {% block logout %}
-                        <li><a href="#">Login</a></li>
+                        <li><a href="./login">Login</a></li>
                         {% endblock %}
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- Up to 6 content blocks, most pages use 1 or 2 -->
         {% block content1 %}{% endblock %}
         {% block content2 %}{% endblock %}
         {% block content3 %}{% endblock %}
@@ -60,7 +66,7 @@
             <div class="container text-center">
                 <p>
                     --Team Mighty Morphin Story Changers 
-                    <!-- Current Year -->
+                    <!-- Script to display the Current Year -->
                     <script language="JavaScript" type="text/javascript">
                         now = new Date
                         theYear = now.getYear()
