@@ -1,0 +1,38 @@
+{% extends 'frame.html' %}
+
+<!-- Changes the title of the page -->
+{% block title %}
+<title>Stories</title>
+{% endblock %}
+
+<!-- Changes the highlighted link from home to stories in the navbar -->
+{% block navlinks %}
+<li><a href="./home">Home</a></li>
+<li class="active"><a href="./stories">Stories<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+
+<!-- Content block -->
+{% block content1 %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last added line</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>test</td>
+            <td>Test</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+
+<!-- Button to redirect to a random page -->
+{% block content2 %}
+<input id="btn-random" name="randomstory" value="" title="Go to a random story" type="submit"
+    style="background-image: url({{ url_for('static', filename='images/randomicon.svg') }})"/>
+{% endblock %}

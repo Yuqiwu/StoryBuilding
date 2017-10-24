@@ -1,0 +1,11 @@
+#btn-random {
+    margin-left: 2%;
+    background-repeat: no-repeat;
+    background-size: 36px 36px;
+    height: 40px;
+    width: 46px;
+    background-color: #00AEEF;
+    background-position: center;
+    padding: 2px 5px 2px 5px;
+    border-radius: 6px 6px 6px 6px;
+}
