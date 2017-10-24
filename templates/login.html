@@ -1,0 +1,51 @@
+{% extends 'frame.html' %}
+
+<!-- Changes the title of the page -->
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+
+{% block navlinks %}
+<li><a href="./home">Home</a></li>
+<li><a href="./stories">Stories</a></li>
+{% endblock %}
+
+<!-- Changes the content of the page to the login/register page -->
+{% block content1 %}
+<form class="form-horizontal" id="lrInputs">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputUsername" class="col-lg-3 control-label">Username</label>
+            <div class="col-lg-3">
+                <input class="form-control" id="inputUsername" placeholder="Username" type="text"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-3 control-label">Password</label>
+            <div class="col-lg-3">
+                <input class="form-control" id="inputPassword" placeholder="Password" type="password"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPasswordVerify" class="col-lg-3 control-label">Verify Password</label>
+            <div class="col-lg-3">
+                <input class="form-control" id="inputPasswordVerify" placeholder="Verify Password" type="password"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-3 col-lg-offset-3">
+                <button type="submit" class="btn btn-primary" 
+                    data-toggle="tooltip" data-placement="left" title="" 
+                    data-original-title="Logs in with the inputted data">
+                    Login
+                </button>
+                <button type="submit" class="btn btn-info"
+                    data-toggle="tooltip" data-placement="right" title=""
+                    data-original-title="Registers into the database with the inputted data">
+                    Register
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}
