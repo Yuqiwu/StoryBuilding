@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, session, redirect, url_for
+from utils import database
 
 storybuilding = Flask(__name__)
 storybuilding.secret_key = os.urandom(32)
