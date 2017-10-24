@@ -52,7 +52,8 @@
                         <div class="form-group">
                             <input class="form-control" placeholder="Search Stories" type="text">
                         </div>
-                        <button type="submit" class="btn btn-default">Search</button>
+                        <input id="btn-search" class="inline-block" name="searchstory" value="" title="Search!" type="submit"
+                        style="background-image: url({{ url_for('static', filename='images/magnifier.svg') }})"/>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         {% block logout %}
