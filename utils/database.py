@@ -4,21 +4,30 @@ f = "../storybase.db"
 db = sqlite3.connect(f)
 c = db.cursor()
 
+c.execute('CREATE TABLE IF NOT EXISTS stories (name TEXT, content TEXT);')
+
 def addUser(username, password):
-    if getPass == None:
-        c.execute('INSERT INTO user values(%s, %s)' %(username, password) )
+    if getPass(username) == None:
+        c.execute('INSERT INTO users VALUES(\'%s\', \'%s\');' %(username, password) )
+        db.commit()
+        return True
+    else:
+        return False
 
 def getPass(user):
-    result = c.execute('SELECT password FROM users WHERE username = %s' %(user) )
-    if result == "":
-        print none
+    c.execute('SELECT password FROM users WHERE username=\'%s\';' %(user) )
+    result = c.fetchall()
+    if result == []:
+        return None
     else:
-        print result[0]
+        return result[0][0]
     
     
         
-#def newStory(title, line, user, content):
-#    c.execute('INSERT INTO stories values(?)', (title) )
-#    c.execute( 'CREATE TABLE %s (line INTEGER PRIMARY KEY,content TEXT, author TEXT);' %(title) )
-#    c.execute('INSERT INTO %s
-#getPass('Bob')
+def newStory(title, line, content, user):
+    c.execute('INSERT INTO stories values(?, ?)', (title, content) )
+    c.execute( 'CREATE TABLE "%s" (line INTEGER PRIMARY KEY,content TEXT, author TEXT);' %(title) )
+    c.execute('INSERT INTO "%s" VALUES( "%s", "%s");' %(title,content,user) )
+    db.commit()
+              
+newStory('the cult of the oreoss','oreos are delicious','bob')
