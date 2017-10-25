@@ -21,4 +21,4 @@ def getPass(user):
 #    c.execute('INSERT INTO stories values(?)', (title) )
 #    c.execute( 'CREATE TABLE %s (line INTEGER PRIMARY KEY,content TEXT, author TEXT);' %(title) )
 #    c.execute('INSERT INTO %s
-getPass('Bob')
+#getPass('Bob')
