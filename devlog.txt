@@ -117,5 +117,14 @@ Kyle :: Initial components of pages.
 --------------------------------------------------------------
 
 Kyle :: Changed icons from image files to glyphs from 
-        fontawesome
+        fontawesome.
+        Added a search template.
+        Added a container to maintain a consistent width
+        and padding across webpages.
+        Added panels around elements to make things look
+        fancy.
+        Added a favicon.ico (the icon next to the title
+        of the page).
+        Added fancy icons next to the inputs in the
+        login page.
 ==============================================================
