@@ -18,6 +18,10 @@ def login():
 def stories():
     return render_template('stories.html')
 
+@storybuilding.route('/search')
+def search():
+    return render_template('search.html')
+
 if __name__ == '__main__':
     storybuilding.debug = True
     storybuilding.run()
