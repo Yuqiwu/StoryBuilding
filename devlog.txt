@@ -111,3 +111,11 @@ Yu Qi :: Added File Skeleton to design.pdf
 
 Kyle :: Initial components of pages.
 ==============================================================
+
+2017-10-25
+
+--------------------------------------------------------------
+
+Kyle :: Changed icons from image files to glyphs from 
+        fontawesome
+==============================================================
