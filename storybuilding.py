@@ -22,6 +22,10 @@ def stories():
 def search():
     return render_template('search.html')
 
+@storybuilding.route('/edit')
+def edit():
+    return render_template('edit.html')
+
 if __name__ == '__main__':
     storybuilding.debug = True
     storybuilding.run()
