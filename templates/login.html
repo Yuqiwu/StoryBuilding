@@ -3,7 +3,10 @@
 <!-- Changes the title of the page -->
 {% block title %}
 <title>Login Page</title>
-{% endblock %} {% block navlinks %}
+{% endblock %} 
+
+<!-- Dehighlights every link since none of them are active -->
+{% block navlinks %}
 <li>
     <a href="./home">Home</a>
 </li>
@@ -13,14 +16,17 @@
 {% endblock %}
 
 <!-- Changes the content of the page to the login/register page -->
-{% block content1 %}
+{% block content %}
 <div class="panel panel-primary">
+    <!-- Panel title -->
     <div class="panel-heading">
         <h3 class="panel-title">Login</h3>
     </div>
+    <!-- Panel body -->
     <div class="panel-body">
         <form class="form-horizontal" id="lrInputs">
             <fieldset>
+                <!-- Username input -->
                 <div class="form-group">
                     <label for="inputUsername" class="col-lg-3 control-label">Username</label>
                     <div class="input-group margin-bottom-sm">
@@ -30,6 +36,7 @@
                         <input class="form-control" id="inputUsername" placeholder="Username" type="text" />
                     </div>
                 </div>
+                <!-- Password input -->
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-3 control-label">Password</label>
                     <div class="input-group margin-bottom-sm">
@@ -39,6 +46,7 @@
                         <input class="form-control" id="inputPassword" placeholder="Password" type="password" />
                     </div>
                 </div>
+                <!-- Verify Password input -->
                 <div class="form-group">
                     <label for="inputPasswordVerify" class="col-lg-3 control-label">Verify Password</label>
                     <div class="input-group margin-bottom-sm">
@@ -48,12 +56,13 @@
                         <input class="form-control" id="inputPasswordVerify" placeholder="Verify Password" type="password" />
                     </div>
                 </div>
+                <!-- Login/Register buttons -->
                 <div class="form-group">
                     <div class="input-group margin-bottom-sm col-lg-offset-3">
                         <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Logs in with the inputted data">
                             Login
                         </button>
-                        <button type="submit" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Registers into the database with the inputted data">
+                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Registers into the database with the inputted data">
                             Register
                         </button>
                     </div>

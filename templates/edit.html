@@ -1,0 +1,41 @@
+{% extends 'frame.html' %}
+
+{% block title %}
+<title>Editing</title>
+{% endblock %}
+
+{% block navlinks %}
+<li>
+    <a href="./home">Home</a>
+</li>
+<li>
+    <a href="./stories">Stories</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="panel panel-success">
+    <!-- Panel title -->
+    <div class="panel-heading">
+        <h3 class="panel-title">Editing: </h3>
+    </div>
+    <!-- Panel body -->
+    <div class="panel-body">
+        <p>Test text that does things like include random words bob john mary jane eyre ubuntu.</p>
+        <hr class="fadebar"/>
+        <!-- Button to add a line -->
+        <div class="form-group">
+            <label class="control-label" for="focusedInput">Add a line:</label>
+            <input class="form-control" id="focusedInput" placeholder="Type your line here..." type="text" autofocus/>
+        </div>
+        <!-- Fancy spinny thingy -->
+        <button class="btn btn-success btn-sm">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>
+                <i class="fa fa-pencil fa-stack-1x"></i>
+            </span>
+            <b> Add to the story</b>
+        </button>
+    </div>
+</div>
+{% endblock %}

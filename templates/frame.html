@@ -59,6 +59,7 @@
                         <!--<input id="btn-search" class="inline-block" name="searchstory" value="" title="Search!" type="submit"
                         style="background-image: url({{ url_for('static', filename='images/magnifier.svg') }})"/>-->
                     </form>
+                    <!-- Login/logout button depending on whether the user is logged in -->
                     <ul class="nav navbar-nav navbar-right">
                         {% block logout %}
                         <li><a href="./login">Login</a></li>
@@ -67,14 +68,9 @@
                 </div>
             </div>
         </nav>
-        <!-- Up to 6 content blocks, most pages use 1 or 2 -->
+        <!-- Content blocks - Changes what appears based on page -->
         <section id="container">
-            {% block content1 %}{% endblock %}
-            {% block content2 %}{% endblock %}
-            {% block content3 %}{% endblock %}
-            {% block content4 %}{% endblock %}
-            {% block content5 %}{% endblock %}
-            {% block content6 %}{% endblock %}
+            {% block content %}{% endblock %}
         </section>
         <!-- Footer - Consistent across all pages-->
         <footer class="footer">
