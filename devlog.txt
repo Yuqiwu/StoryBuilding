@@ -127,4 +127,5 @@ Kyle :: Changed icons from image files to glyphs from
         of the page).
         Added fancy icons next to the inputs in the
         login page.
+        Added an edit page.
 ==============================================================
