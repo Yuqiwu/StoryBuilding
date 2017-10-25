@@ -1,6 +1,6 @@
 import sqlite3
 
-f = "storybase.db"
+f = "../storybase.db"
 db = sqlite3.connect(f)
 c = db.cursor()
 
