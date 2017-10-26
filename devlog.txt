@@ -131,3 +131,10 @@ Kyle :: Changed icons from image files to glyphs from
         Added an edit page.
 Kerry :: added functions relating to story need to test getStory function
 ==============================================================
+
+2017-10-26
+
+--------------------------------------------------------------
+
+Edmond :: did accounts and cookie stuff
+==============================================================

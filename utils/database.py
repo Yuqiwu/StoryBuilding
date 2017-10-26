@@ -1,4 +1,4 @@
-import sqlite3
+0import sqlite3
 
 f = "../storybase.db"
 db = sqlite3.connect(f)
@@ -23,7 +23,18 @@ def getPass(user):
         return None
     else:
         return result[0][0]
-        
+
+#note: cookies will be created and deleted in the file that does the flask stuff
+def login(username,password): #returns 1 if successful, 0 if not successful, and -1 if account does not exist
+    p = getPass(username)
+    if(p == None):
+        return -1
+    elif(p == password):
+        makeCookie(username,password)
+        return 1
+    else:
+        return 0
+
 def newStory(title, content, user):
     c.execute('INSERT INTO stories values(?);', (title) )
     c.execute( 'CREATE TABLE "%s" (show INTEGER,content TEXT, author TEXT);' %(title) )
@@ -47,6 +58,3 @@ def getStory(story,name):
         for content in result:
             s = s + content[0] + ' '
         return s
-#newStory('the','hi','bob')
-print getStory('the','bob')
-#addToStory("the",'hi5','bob')
