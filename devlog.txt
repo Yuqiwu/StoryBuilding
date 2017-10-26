@@ -110,6 +110,7 @@ Yu Qi :: Added File Skeleton to design.pdf
 --------------------------------------------------------------
 
 Kyle :: Initial components of pages.
+Kerry :: add database and database.py w/ functions relating to users
 ==============================================================
 
 2017-10-25
@@ -128,4 +129,5 @@ Kyle :: Changed icons from image files to glyphs from
         Added fancy icons next to the inputs in the
         login page.
         Added an edit page.
+Kerry :: added functions relating to story need to test getStory function
 ==============================================================
