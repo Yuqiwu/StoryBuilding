@@ -4,7 +4,9 @@ f = "../storybase.db"
 db = sqlite3.connect(f)
 c = db.cursor()
 
-c.execute('CREATE TABLE IF NOT EXISTS stories (title TEXT, content TEXT);')
+c.execute('CREATE TABLE IF NOT EXISTS stories (title TEXT);')
+c.execute('CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT);')
+
 
 def addUser(username, password):
     if getPass(username) == None:
@@ -23,25 +25,28 @@ def getPass(user):
         return result[0][0]
         
 def newStory(title, content, user):
-    c.execute('INSERT INTO stories values(?, ?)', (title, content) )
-    c.execute( 'CREATE TABLE "%s" (content TEXT, author TEXT);' %(title) )
+    c.execute('INSERT INTO stories values(?);', (title) )
+    c.execute( 'CREATE TABLE "%s" (show INTEGER,content TEXT, author TEXT);' %(title) )
     addToStory(title, content, user)
     
 def addToStory(title, content, user):
-    c.execute('INSERT INTO "%s" VALUES( "%s", "%s");' %(title,content,user) )
+    c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user) )
     db.commit()
 
 def getStory(story,name):
-    c.execute('SELECT author FROM "%s" WHERE username=\'%s\';' %(story,name) )
+    c.execute('SELECT author FROM "%s" WHERE author=\'%s\';' %(story,name) )
     result = c.fetchall()
     if result == []:
-        c.execute('SELECT content FROM stories WHERE title = "%s";' %(story) )
+        c.execute('SELECT content FROM "%s"' %(story) )
         result = c.fetchall()
-        return result[0][0]
+        return result[-1][0]
     else:
         c.execute('SELECT content FROM "%s"' %(story) )
         result = c.fetchall()
         s = ""
         for content in result:
-            s = s + content[0]
+            s = s + content[0] + ' '
         return s
+#newStory('the','hi','bob')
+print getStory('the','bob')
+#addToStory("the",'hi5','bob')
