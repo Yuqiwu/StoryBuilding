@@ -1,12 +1,9 @@
-0import sqlite3
+import sqlite3
 
 f = "../storybase.db"
 db = sqlite3.connect(f)
 c = db.cursor()
-
-c.execute('CREATE TABLE IF NOT EXISTS stories (title TEXT);')
 c.execute('CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT);')
-
 
 def addUser(username, password):
     if getPass(username) == None:
@@ -35,26 +32,19 @@ def login(username,password): #returns 1 if successful, 0 if not successful, and
     else:
         return 0
 
-def newStory(title, content, user):
-    c.execute('INSERT INTO stories values(?);', (title) )
-    c.execute( 'CREATE TABLE "%s" (show INTEGER,content TEXT, author TEXT);' %(title) )
-    addToStory(title, content, user)
-    
-def addToStory(title, content, user):
-    c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user) )
-    db.commit()
+def makeLoginCookie(username,password): #call this function after login is successful
+    session['username'] = username
+	session['password'] = password
+	
 
-def getStory(story,name):
-    c.execute('SELECT author FROM "%s" WHERE author=\'%s\';' %(story,name) )
-    result = c.fetchall()
-    if result == []:
-        c.execute('SELECT content FROM "%s"' %(story) )
-        result = c.fetchall()
-        return result[-1][0]
-    else:
-        c.execute('SELECT content FROM "%s"' %(story) )
-        result = c.fetchall()
-        s = ""
-        for content in result:
-            s = s + content[0] + ' '
-        return s
+def deleteLoginCookie(): #call this function if logging out or logging in with cookie is unsuccessful
+    if('username' in session):
+		session.pop('username')
+	if('password') in session):
+		session.pop('password')
+
+def hasCookie():
+	if('user' in session and 'password' in session):
+		return True
+	else:
+		return False
