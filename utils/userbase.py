@@ -1,4 +1,5 @@
 import sqlite3
+from flask import session
 
 f = "../storybase.db"
 db = sqlite3.connect(f)
@@ -37,7 +38,7 @@ def login(username, password): #returns 1 if successful, 0 if not successful, an
 # Stores the login in a cookie
 def makeLoginCookie(username, password): #call this function after login is successful
     session['username'] = username
-	session['password'] = password
+    session['password'] = password
 	
 # Deletes the cookie that stores user login
 def deleteLoginCookie(): #call this function if logging out or logging in with cookie is unsuccessful
