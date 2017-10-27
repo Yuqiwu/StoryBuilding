@@ -44,7 +44,7 @@ def makeLoginCookie(username, password): #call this function after login is succ
 def deleteLoginCookie(): #call this function if logging out or logging in with cookie is unsuccessful
     if('username' in session):
 		session.pop('username')
-	if('password') in session):
+    if('password' in session):
 		session.pop('password')
 
 # Checks if a user login cookie exists

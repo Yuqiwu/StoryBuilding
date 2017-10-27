@@ -61,9 +61,11 @@
                     </form>
                     <!-- Login/logout button depending on whether the user is logged in -->
                     <ul class="nav navbar-nav navbar-right">
-                        {% block logout %}
-                        <li><a href="./login">Login</a></li>
-                        {% endblock %}
+                        {% if not session.username %}
+                        <li><a href="{{ url_for('auth') }}">Login</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

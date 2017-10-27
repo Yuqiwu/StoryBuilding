@@ -8,11 +8,15 @@ storybuilding.secret_key = os.urandom(32)
 @storybuilding.route('/')
 @storybuilding.route('/home')
 def homepage():
-    return render_template('home.html')
+    ran_story = storybase.get_ran_story()
+    return render_template('home.html', ran_title = "TEST", ran_content = "TEST")
 
 @storybuilding.route('/login')
-def login():
-    return render_template('login.html')
+def auth():
+    if 'username' not in session:
+        return render_template('login.html')
+    else:
+        return redirect(url_for('homepage'))
 
 @storybuilding.route('/stories')
 def stories():

@@ -46,24 +46,11 @@
                         <input class="form-control" id="inputPassword" placeholder="Password" type="password" />
                     </div>
                 </div>
-                <!-- Verify Password input -->
-                <div class="form-group">
-                    <label for="inputPasswordVerify" class="col-lg-3 control-label">Verify Password</label>
-                    <div class="input-group margin-bottom-sm">
-                        <span class="input-group-addon">
-                            <span class="fa fa-key"></span>
-                        </span>
-                        <input class="form-control" id="inputPasswordVerify" placeholder="Verify Password" type="password" />
-                    </div>
-                </div>
                 <!-- Login/Register buttons -->
                 <div class="form-group">
                     <div class="input-group margin-bottom-sm col-lg-offset-3">
-                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Logs in with the inputted data">
+                        <button type="submit" action="{{ url_for('auth') }}" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Logs in with the inputted data">
                             Login
-                        </button>
-                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Registers into the database with the inputted data">
-                            Register
                         </button>
                     </div>
                 </div>
