@@ -5,6 +5,23 @@ from utils import database
 storybuilding = Flask(__name__)
 storybuilding.secret_key = os.urandom(32)
 
+def makeLoginCookie(username,password): #call this function after login is successful
+    session['username'] = username
+	session['password'] = password
+	
+
+def deleteLoginCookie(): #call this function if logging out or logging in with cookie is unsuccessful
+    if('username' in session):
+		session.pop('username')
+	if('password') in session):
+		session.pop('password')
+
+def hasCookie():
+	if('user' in session and 'password' in session):
+		return True
+	else:
+		return False
+
 @storybuilding.route('/')
 @storybuilding.route('/home')
 def homepage():

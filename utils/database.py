@@ -1,4 +1,4 @@
-import sqlite3
+0import sqlite3
 
 f = "../storybase.db"
 db = sqlite3.connect(f)
