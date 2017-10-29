@@ -10,61 +10,6 @@ Kerry Chen
 
 pd 9
 
----------------------
-
-Option 0
-
-
-/////////// Zone of Reflection \\\\\\\\\\\
-
-------------------------------------------
-
-OBSTACLES OVERCOME
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-wow we so BOSS bc...
-
-
-
-
-UNRESOLVED ISSUES
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-blah blah pesky bug...
-
-
-
-
-COOL STUFF LEARNED
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-wow! oo!...
-
-
-
-
-MID-DEVELOPMENT DESIGN CHANGES
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-we changed ___ to ___ bc...
-
-
-
-
-LESSONS LEARNED
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-tales of wisdom gained...
-
-
-
-
-
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -81,66 +26,49 @@ tales of wisdom gained...
 ==============================================================
 
 
+wuY -- 2017-10-20
+Initialized devlog & Edited design document
 
-2017-10-20
+wongE -- 2017-10-20
+Edited design document
 
---------------------------------------------------------------
+linK -- 2017-10-20
+Edited design document
 
-Yu Qi :: Initialized devlog & Edited design document
+linK -- 2017-10-23
+Initial adding of bootstrap components.
 
-Edmond :: Edited design document
+wuY -- 2017-10-23
+Added File Skeleton to design.pdf
 
-Kyle :: Edited design document
+linK -- 2017-10-24
+Initial components of pages.
 
-==============================================================
+chenK -- 2017-10-24
+add database and database.py w/ functions relating to users
 
+linK -- 2017-10-25
+Changed icons from image files to glyphs from 
+fontawesome.
+Added a search template.
+Added a container to maintain a consistent width
+and padding across webpages.
+Added panels around elements to make things look
+fancy.
+Added a favicon.ico (the icon next to the title
+of the page).
+Added fancy icons next to the inputs in the
+login page.
+Added an edit page.
+	
+chenK -- 2017-10-25
+added functions relating to story need to test getStory function
 
+wongE 2017-10-26
+did accounts and cookie stuff
 
-2017-10-23
+wongE -- 2017-10-28
+added a function
 
---------------------------------------------------------------
-
-Kyle :: Initial adding of bootstrap components.
-
-Yu Qi :: Added File Skeleton to design.pdf
-==============================================================
-
-2017-10-24
-
---------------------------------------------------------------
-
-Kyle :: Initial components of pages.
-Kerry :: add database and database.py w/ functions relating to users
-==============================================================
-
-2017-10-25
-
---------------------------------------------------------------
-
-Kyle :: Changed icons from image files to glyphs from 
-        fontawesome.
-        Added a search template.
-        Added a container to maintain a consistent width
-        and padding across webpages.
-        Added panels around elements to make things look
-        fancy.
-        Added a favicon.ico (the icon next to the title
-        of the page).
-        Added fancy icons next to the inputs in the
-        login page.
-        Added an edit page.
-Kerry :: added functions relating to story need to test getStory function
-==============================================================
-
-2017-10-26
-
---------------------------------------------------------------
-
-Edmond :: did accounts and cookie stuff
-==============================================================
-
-2017-10-28
-
---------------------------------------------------------------
-
-Edmond :: added a function
+wuY -- 2017-10-29 03-16
+fixed the format for devlog.txt
