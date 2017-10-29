@@ -1,7 +1,7 @@
 import sqlite3
 from flask import session
 
-f = "../storybase.db"
+f = "./storybase.db"
 db = sqlite3.connect(f)
 c = db.cursor()
 
