@@ -12,8 +12,10 @@ def add_user(username, password):
     if get_pass(username) is None:
         c.execute('INSERT INTO users VALUES(\'%s\', \'%s\');' %(username, password))
         db.commit()
+        db.close()
         return True
     else:
+        db.close()
         return False
 
 # Get the password of a user
@@ -23,8 +25,10 @@ def get_pass(username):
     c.execute('SELECT password FROM users WHERE username=\'%s\';' %(username))
     result = c.fetchall()
     if result == []:
+        db.close()
         return None
     else:
+        db.close()
         return result[0][0]
 
 # Login function
