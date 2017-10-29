@@ -138,3 +138,9 @@ Kerry :: added functions relating to story need to test getStory function
 
 Edmond :: did accounts and cookie stuff
 ==============================================================
+
+2017-10-28
+
+--------------------------------------------------------------
+
+Edmond :: added a function
