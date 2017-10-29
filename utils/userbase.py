@@ -35,11 +35,15 @@ def login(username, password): #returns 1 if successful, 0 if not successful, an
     else:
         return 0
 
+#checks to see if user is in a session
+def inSession():
+	return (hasCookie() and session.get('password') == getPass(session.get('username'))
+
 # Stores the login in a cookie
 def makeLoginCookie(username, password): #call this function after login is successful
     session['username'] = username
     session['password'] = password
-	
+
 # Deletes the cookie that stores user login
 def deleteLoginCookie(): #call this function if logging out or logging in with cookie is unsuccessful
     if('username' in session):
