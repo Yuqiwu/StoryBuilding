@@ -1,8 +1,8 @@
 import sqlite3
 
 f = "./storybase.db"
-db = sqlite3.connect(f)
-c = db.cursor()
+#db = sqlite3.connect(f)
+#c = db.cursor()
 
 # Ensures the stories database exists
 c.execute('CREATE TABLE IF NOT EXISTS stories (title TEXT);')
@@ -19,6 +19,7 @@ def new_story(title, content, user):
         c.execute('INSERT INTO stories VALUES(?);', (title,))
         c.execute('CREATE TABLE "%s" (content TEXT, user TEXT);' %(title))
     add_to_story(title, content, user)
+    db.close()
 
 # Adds a line to the existing story
 def add_to_story(title, content, user):

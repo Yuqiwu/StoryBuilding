@@ -2,8 +2,8 @@ import sqlite3
 from flask import session
 
 f = "./storybase.db"
-db = sqlite3.connect(f)
-c = db.cursor()
+#db = sqlite3.connect(f)
+#c = db.cursor()
 
 # Adds a username/password combination to the user table
 def add_user(username, password):
