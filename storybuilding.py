@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from utils import storybase, userbase
 
+in_session = userbase.in_session
+
 storybuilding = Flask(__name__)
 storybuilding.secret_key = os.urandom(32)
 
@@ -12,7 +14,7 @@ def homepage():
 
 @storybuilding.route('/login')
 def loginpage():
-    if 'username' not in session:
+    if not in_session():
         return render_template('login.html')
     else:
         return redirect(url_for('homepage'))
@@ -65,6 +67,8 @@ def edit():
 
 @storybuilding.route('/addline', methods=["POST"])
 def addline():
+    if(not in_session()):
+        return redirect(url_for('loginpage'))
     story_title = request.form['title']
     story_line = request.form['line']
     username_i = session.get('username')
@@ -74,6 +78,8 @@ def addline():
 
 @storybuilding.route('/story')
 def story():
+    if(not in_session ()):
+        return redirect(url_for('loginpage'))
     story_title=session.get('title')
     story_line=storybase.get_story(story_title, session.get('username'))
     return render_template('story.html', story_title=story_title, story_content=story_line)
