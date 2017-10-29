@@ -1,14 +1,14 @@
 import sqlite3
 
 f = "./storybase.db"
-#db = sqlite3.connect(f)
-#c = db.cursor()
+db = sqlite3.connect(f)
+c = db.cursor()
 
 # Ensures the stories database exists
 c.execute('CREATE TABLE IF NOT EXISTS stories (title TEXT);')
 # Ensures the user database exists
 c.execute('CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT);')
-
+db.close()
 # Creates a new table containing the first line of the new story
 def new_story(title, content, user):
     db = sqlite3.connect(f)
