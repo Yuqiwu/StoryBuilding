@@ -19,19 +19,21 @@ def new_story(title, content, user):
         c.execute('INSERT INTO stories VALUES(?);', (title,))
         c.execute('CREATE TABLE "%s" (content TEXT, user TEXT);' %(title))
     add_to_story(title, content, user)
-    
+
 # Adds a line to the existing story
 def add_to_story(title, content, user):
     db = sqlite3.connect(f)
     c = db.cursor()
     c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user))
     db.commit()
+    db.close()
 
 def get_stories():
     db = sqlite3.connect(f)
     c = db.cursor()
     c.execute('SELECT * FROM stories')
     result = c.fetchall()
+    db.close()
     return result
 
 # Returns the latest line of the story if the user has not added
@@ -44,6 +46,7 @@ def get_story(title, user):
     if result == []:
         c.execute('SELECT content FROM "%s"' %(title))
         result = c.fetchall()
+        db.close()
         return result[-1][0]
     else:
         c.execute('SELECT content FROM "%s"' %(title))
@@ -51,6 +54,7 @@ def get_story(title, user):
         s = ""
         for content in result:
             s = s + content[0] + ' '
+        db.close()
         return s
 
 def get_ran_story():
@@ -60,4 +64,5 @@ def get_ran_story():
     resultt = c.fetchall()
     c.execute('SELECT * FROM "%s"' %(resultt[0]))
     resultl = c.fetchall()
+    db.close()
     return resultt, resultl
