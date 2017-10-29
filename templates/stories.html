@@ -8,10 +8,10 @@
 <!-- Changes the highlighted link from home to stories in the navbar -->
 {% block navlinks %}
 <li>
-    <a href="./home">Home</a>
+    <a href="{{ url_for('homepage') }}">Home</a>
 </li>
 <li class="active">
-    <a href="./stories">Stories
+    <a href="{{ url_for('stories') }}">Stories
         <span class="sr-only">(current)</span>
     </a>
 </li>
@@ -30,31 +30,22 @@
             <!-- Column titles -->
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <th>Title</th>
                     <th>Last added line</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
+                    {% set storylist = {{ storylist }} %}
+                    {% for story in storylist %}
                     <td>
-                        <a class="btn btn-default btn-xs" href="#">Story, the tale of testing tests in a story testing way</a>
+                        <a class="btn btn-default btn-xs" href="{{ url_for('go_story') }}">{{ story[0] }}</a>
                     </td>
                     <td>The unanimous Declaration of the thirteen united States of America, When in the Course of human events,
                         it becomes necessary for one people to dissolve the political bands which have connected them with
                         another, and to assume among the powers of the earth, the separate and equal station to which the
                         Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires
                         that they should declare the causes which impel them to the separation. </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <a class="btn btn-default btn-xs" href="#">Story2, the additional story of a knight in shining armor</a>
-                    </td>
-                    <td>Edward by the grace of God King of England, lord of Ire land and duke of Aquitaine sends greetings to
-                        all to whom the present letters come. We have inspected the great charter of the lord Henry, late
-                        King of England, our father, concerning the liberties of England in these words:</td>
                 </tr>
             </tbody>
         </table>

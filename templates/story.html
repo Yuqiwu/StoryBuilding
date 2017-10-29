@@ -2,24 +2,24 @@
 
 <!-- Changes the title of the page -->
 {% block title %}
-<title>Homepage</title>
+<title>{{ story_title }}</title>
 {% endblock %}
 
 <!-- Changes the content of the page to display a randomly
     selected story -->
 {% block content %}
-<div class="panel panel-warning">
+<div class="panel panel-warning"> 
     <!-- Panel title -->
     <div class="panel-heading">
-        <h2 class="panel-title">Randomly Selected: {{ ran_title }}</h2>
+        <h2 class="panel-title">{{ story_title }}</h2>
     </div>
     <!-- Panel body -->
     <div class="panel-body">
-        <p>{{ ran_content }}</p>
+        <p>{{ story_content }}</p>
         <hr class="fadebar"/>
         <!-- Fancy Spinny thingy -->
         <form action="{{ url_for('edit') }}" method="POST">
-            <input type="text" style="display: none;" value="{{ran_title}}" name="story_title" />
+            <input type="text" style="display: none;" value="{{ story_title }}" name="story_title" />
             <button class="btn btn-warning btn-sm" type="submit">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>

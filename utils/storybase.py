@@ -13,9 +13,12 @@ c.execute('CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT);')
 def new_story(title, content, user):
     db = sqlite3.connect(f)
     c = db.cursor()
-    c.execute('INSERT INTO stories values(?);', (title))
-    c.execute('CREATE TABLE "%s" (content TEXT, user TEXT);' %(title))
-    addToStory(title, content, user)
+    c.execute('SELECT * FROM stories WHERE title = "%s";' %(title))
+    result = c.fetchall()
+    if result == []:
+        c.execute('INSERT INTO stories VALUES(?);', (title,))
+        c.execute('CREATE TABLE "%s" (content TEXT, user TEXT);' %(title))
+    add_to_story(title, content, user)
     
 # Adds a line to the existing story
 def add_to_story(title, content, user):
@@ -23,6 +26,13 @@ def add_to_story(title, content, user):
     c = db.cursor()
     c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user))
     db.commit()
+
+def get_stories():
+    db = sqlite3.connect(f)
+    c = db.cursor()
+    c.execute('SELECT * FROM stories')
+    result = c.fetchall()
+    return result
 
 # Returns the latest line of the story if the user has not added
 # Returns the entire story if the user has added
@@ -47,6 +57,7 @@ def get_ran_story():
     db = sqlite3.connect(f)
     c = db.cursor()
     c.execute('SELECT * FROM stories ORDER BY RANDOM() LIMIT 1;')
-    result = c.fetchall()
-    
-    return result
+    resultt = c.fetchall()
+    c.execute('SELECT * FROM "%s"' %(resultt[0]))
+    resultl = c.fetchall()
+    return resultt, resultl

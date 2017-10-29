@@ -1,0 +1,49 @@
+{% extends 'frame.html' %}
+
+{% block content %}
+<div class="panel panel-primary">
+    <!-- Panel title -->
+    <div class="panel-heading">
+        <h3 class="panel-title">New Story</h3>
+    </div>
+    <!-- Panel body -->
+    <div class="panel-body">
+        <form class="form-horizontal" id="lrInputs" action="{{ url_for('createstory') }}" method="POST">
+            <fieldset>
+                <!-- Username input -->
+                <div class="form-group">
+                    <label for="inputTitle" class="col-lg-3 control-label">Title</label>
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon">
+                            <span class="fa fa-pencil-square-o"></span>
+                        </span>
+                        <input class="form-control" id="inputTitle" name="inputTitle" placeholder="Title" type="text" required/>
+                    </div>
+                </div>
+                <!-- Password input -->
+                <div class="form-group">
+                    <label for="inputLine" class="col-lg-3 control-label">Line</label>
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon">
+                            <span class="fa fa-key"></span>
+                        </span>
+                        <input class="form-control" id="inputLine" name="inputLine" placeholder="Line" type="text" required/>
+                    </div>
+                </div>
+                {% if session.username %}
+                <!-- Login/Register buttons -->
+                <div class="form-group">
+                    <div class="input-group margin-bottom-sm col-lg-offset-3">
+                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Creates a new story">
+                            Create
+                        </button>
+                    </div>
+                </div>
+                {% else %}
+                <h3 style="color: red;">LOGIN PLEASE</h3>
+                {% endif %}
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}
