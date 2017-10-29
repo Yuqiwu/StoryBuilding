@@ -67,8 +67,6 @@ def edit():
 
 @storybuilding.route('/addline', methods=["POST"])
 def addline():
-    if(not in_session()):
-        return redirect(url_for('loginpage'))
     story_title = request.form['title']
     story_line = request.form['line']
     username_i = session.get('username')
@@ -81,6 +79,8 @@ def story():
     if(not in_session ()):
         return redirect(url_for('loginpage'))
     story_title=session.get('title')
+    if(story_title == None):
+        return redirect(url_for('homepage'))
     story_line=storybase.get_story(story_title, session.get('username'))
     return render_template('story.html', story_title=story_title, story_content=story_line)
 
