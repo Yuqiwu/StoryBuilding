@@ -26,28 +26,28 @@ pd 9
 ==============================================================
 
 
-wuY -- 2017-10-20
+yuqiW -- 2017-10-20
 Initialized devlog & Edited design document
 
-wongE -- 2017-10-20
+edmondW -- 2017-10-20
 Edited design document
 
-linK -- 2017-10-20
+kyleL -- 2017-10-20
 Edited design document
 
-linK -- 2017-10-23
+kyleL -- 2017-10-23
 Initial adding of bootstrap components.
 
-wuY -- 2017-10-23
+yuqiW -- 2017-10-23
 Added File Skeleton to design.pdf
 
-linK -- 2017-10-24
+kyleL -- 2017-10-24
 Initial components of pages.
 
-chenK -- 2017-10-24
+kerryC -- 2017-10-24
 add database and database.py w/ functions relating to users
 
-linK -- 2017-10-25
+kyleL -- 2017-10-25
 Changed icons from image files to glyphs from 
 fontawesome.
 Added a search template.
@@ -61,14 +61,14 @@ Added fancy icons next to the inputs in the
 login page.
 Added an edit page.
 	
-chenK -- 2017-10-25
+kerryC -- 2017-10-25
 added functions relating to story need to test getStory function
 
-wongE 2017-10-26
+edmondW 2017-10-26
 did accounts and cookie stuff
 
-wongE -- 2017-10-28
+edmondW -- 2017-10-28
 added a function
 
-wuY -- 2017-10-29 03-16
+yuqiW -- 2017-10-29 03-16
 fixed the format for devlog.txt
