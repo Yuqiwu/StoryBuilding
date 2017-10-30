@@ -72,3 +72,9 @@ added a function
 
 yuqiW -- 2017-10-29 03-16
 fixed the format for devlog.txt
+
+kyleL -- 2017-10-29
+Fixed various bugs regarding login.
+Implemented story-list page.
+Implemented add-story button.
+Implemented edit-story button.
