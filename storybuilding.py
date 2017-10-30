@@ -74,9 +74,14 @@ def addline():
 
 @storybuilding.route('/story')
 def story():
-    story_title=session.get('title')
-    story_line=storybase.get_story(story_title, session.get('username'))
+    story_title = session.get('title')
+    story_line = storybase.get_story(story_title, session.get('username'))
     return render_template('story.html', story_title=story_title, story_content=story_line)
+
+@storybuilding.route('/gostory/<title>')
+def getstory(title):
+    session['title'] = title
+    return redirect(url_for('story'))
 
 if __name__ == '__main__':
     storybuilding.debug = True

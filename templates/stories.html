@@ -31,22 +31,16 @@
             <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Last added line</th>
                 </tr>
             </thead>
             <tbody>
+                {% for story in storylist %}
                 <tr>
-                    {% set storylist = {{ storylist }} %}
-                    {% for story in storylist %}
                     <td>
-                        <a class="btn btn-default btn-xs" href="{{ url_for('go_story') }}">{{ story[0] }}</a>
+                        <a class="btn btn-default btn-xs" href="{{ url_for('getstory', title = story[0]) }}">{{ story[0] }}</a>
                     </td>
-                    <td>The unanimous Declaration of the thirteen united States of America, When in the Course of human events,
-                        it becomes necessary for one people to dissolve the political bands which have connected them with
-                        another, and to assume among the powers of the earth, the separate and equal station to which the
-                        Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires
-                        that they should declare the causes which impel them to the separation. </td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
         <!-- Button to take the user to a random story -->
