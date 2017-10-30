@@ -78,6 +78,7 @@ Fixed various bugs regarding login.
 Implemented story-list page.
 Implemented add-story button.
 Implemented edit-story button.
+Added comments and updated design.pdf
 
 yuqiW -- 2017-10-29 21:11
 Updated design.pdf
