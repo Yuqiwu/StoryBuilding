@@ -8,7 +8,7 @@ storybuilding.secret_key = os.urandom(32)
 @storybuilding.route('/')
 def homepage():
     ran_story = storybase.get_ran_story()
-    return render_template('home.html', ran_title = ran_story[0][0][0], ran_content = ran_story[1][0][0])
+    return render_template('home.html', ran_title = ran_story[0][0][0], ran_content = ran_story[1][-1][0])
 
 @storybuilding.route('/login')
 def loginpage():
@@ -61,7 +61,8 @@ def search():
 def edit():
     story_title = request.form['story_title']
     story_line = storybase.get_story(story_title, session.get('username'))
-    return render_template('edit.html', story_title=story_title, story_line=story_line)
+    story_state = storybase.edited(story_title, session.get('username'))
+    return render_template('edit.html', story_title=story_title, story_line=story_line, story_state=story_state)
 
 @storybuilding.route('/addline', methods=["POST"])
 def addline():

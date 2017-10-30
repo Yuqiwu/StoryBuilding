@@ -5,6 +5,16 @@
 <title>{{ story_title }}</title>
 {% endblock %}
 
+<!-- Dehighlights every link since none of them are active -->
+{% block navlinks %}
+<li>
+    <a href="{{ url_for('homepage') }}">Home</a>
+</li>
+<li>
+    <a href="{{ url_for('stories') }}">Stories</a>
+</li>
+{% endblock %}
+
 <!-- Changes the content of the page to display a randomly
     selected story -->
 {% block content %}

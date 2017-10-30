@@ -25,9 +25,24 @@ def new_story(title, content, user):
 def add_to_story(title, content, user):
     db = sqlite3.connect(f)
     c = db.cursor()
-    c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user))
+    c.execute('SELECT * FROM "%s" WHERE user = "%s";' %(title,user))
+    result = c.fetchall()
+    if result == []:
+        c.execute('INSERT INTO "%s" VALUES("%s", "%s");' %(title,content,user))
+    else:
+        return "You have already added to this story."
     db.commit()
     db.close()
+
+def edited(title, user):
+    db = sqlite3.connect(f)
+    c = db.cursor()
+    c.execute('SELECT * FROM "%s" WHERE user = "%s";' %(title,user))
+    result = c.fetchall()
+    if result == []:
+        return False
+    else:
+        return True
 
 def get_stories():
     db = sqlite3.connect(f)

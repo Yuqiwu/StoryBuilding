@@ -1,5 +1,19 @@
 {% extends 'frame.html' %}
 
+{% block title %}
+<title>New Story</title>
+{% endblock %}
+
+<!-- Dehighlights every link since none of them are active -->
+{% block navlinks %}
+<li>
+    <a href="{{ url_for('homepage') }}">Home</a>
+</li>
+<li>
+    <a href="{{ url_for('stories') }}">Stories</a>
+</li>
+{% endblock %}
+
 {% block content %}
 <div class="panel panel-primary">
     <!-- Panel title -->

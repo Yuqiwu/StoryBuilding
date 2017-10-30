@@ -21,6 +21,9 @@
     </div>
     <!-- Panel body -->
     <div class="panel-body">
+        {% if story_state == True %}
+        <h3 style="color: red;">You have already edited this story</h3>
+        {% else %}
         <p>Last Line: {{ story_line }}</p>
         <hr class="fadebar"/>
         <!-- Button to add a line -->
@@ -43,6 +46,7 @@
             <h3 style="color: red;">Please login first</h3>
             {% endif %}
         </form>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
