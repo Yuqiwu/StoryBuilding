@@ -1,0 +1,8 @@
+List of changes
+
+1. No more search page.
+2. No more sign up page. Now when you login with a new username, you are automatically
+register with this new username and login.
+3. Add a new section in design.pdf where there is a File Skeleton that allows us to
+communicate with each other easier. It includes all the methods and function.
+4. Beautiful page

@@ -70,11 +70,16 @@ did accounts and cookie stuff
 edmondW -- 2017-10-28
 added a function
 
-yuqiW -- 2017-10-29 03-16
+yuqiW -- 2017-10-29 03:16
 fixed the format for devlog.txt
 
-kyleL -- 2017-10-29
+kyleL -- 2017-10-29 20:38
 Fixed various bugs regarding login.
 Implemented story-list page.
 Implemented add-story button.
 Implemented edit-story button.
+
+yuqiW -- 2017-10-29 21:11
+Updated design.pdf
+Removed search.html and signup.html
+Added changes.txt
